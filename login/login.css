@@ -6,7 +6,7 @@ body::before {
     width: 100%;
     height: 100%;
     z-index: -1;
-    background-image: url('../1.jpg');
+    background-image: url('../bg.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     opacity: 0.82;
@@ -110,5 +110,7 @@ a.register-link:hover {
 }
 
 .error-text{
-    display: none
+    /* display: none; */
+    color: red;
+    align-self: flex-start;
 }
