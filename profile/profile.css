@@ -1,0 +1,37 @@
+.profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    z-index: -1;
+    background-image: url('../bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.profile-content {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border: 1px solid #ddd;
+    box-shadow: 0px 0px 10px #ddd;
+    background-color: rgba(255,255,255,0.7);
+}
+
+.profile-info {
+    align-self: center;
+}
+
+.info-row {
+    margin-bottom: 20px;
+}
+
+h1 {
+    margin-bottom: 30px;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    align-self: flex-end;
+}

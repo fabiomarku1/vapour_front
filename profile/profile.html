@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vapour</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="profile.css">
+    <script src="profile.js" defer></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link font-weight-bold" href="../home/home.html">Vapour</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="categoriesDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categories
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="categoriesDropdown">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Adventure</a>
+                        <a class="dropdown-item" href="#">RPG</a>
+                        <a class="dropdown-item" href="#">Strategy</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../about/about.html">About</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="myAccountDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">My Account
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="myAccountDropdown">
+                        <a class="dropdown-item" href="#">Profile</a>
+                        <a class="dropdown-item" href="#">My Games</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Logout</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="profile-container">
+        <div class="profile-content">
+            <div class="profile-info">
+                <h1>My Profile</h1>
+                <div class="info-row">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" value="John" disabled>
+                </div>
+                <div class="info-row">
+                    <label for="surname">Surname:</label>
+                    <input type="text" id="surname" name="surname" value="Doe" disabled>
+                </div>
+                <div class="info-row">
+                    <label for="age">Age:</label>
+                    <input type="number" id="age" name="age" value="30" disabled>
+                </div>
+                <div class="info-row">
+                    <label for="created-date">Account Created:</label>
+                    <input type="text" id="created-date" name="created-date" value="2022-02-15" disabled>
+                </div>
+                <div class="info-row">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" value="johndoe@example.com" disabled>
+                </div>
+                <div class="info-row">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" value="password123" disabled>
+                </div>
+                <div class="button-group">
+                    <button type="button" class="btn btn-primary edit-button">Edit</button>
+                    <button type="submit" class="btn btn-success save-button" hidden>Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer section -->
+    <footer class="bg-dark text-white">
+        <div class="container py-3 d-flex align-items-center">
+
+            <ul class="list-inline">
+                <li class="list-inline-item"><a href="../home/home.html">Store</a></li>
+                <li class="list-inline-item"><a href="#">My Account</a></li>
+                <!-- <li class="list-inline-item"><a href="#">Login</a></li> -->
+                <li class="list-inline-item"><a href="../about/about.html">About</a></li>
+                <li class="list-inline-item"><a href="https://www.facebook.com/people/Vapour/100090254234077/"
+                        target="_blank">Facebook</a></li>
+                <li class="list-inline-item"><a href="https://www.twitter.com/" target="_blank">Twitter</a></li>
+                <li class="list-inline-item"><a href="https://www.instagram.com/" target="_blank">Instagram</a></li>
+                <li class="list-inline-item"><a href="../privacy/privacy.html" target="_blank">Privacy Policy</a></li>
+                <li class="list-inline-item"><a href="../terms/terms.html" target="_blank">Terms of Use</a></li>
+            </ul>
+        </div>
+        <div class="container-fluid bg-secondary py-2">
+            <div class="text-center">
+                &copy; 2023 Vapour. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
