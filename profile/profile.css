@@ -19,7 +19,13 @@
 }
 
 .profile-info {
-    align-self: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.button-group {
+    display: flex;
+    justify-content: flex-end;
 }
 
 .info-row {
