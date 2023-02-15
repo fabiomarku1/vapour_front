@@ -63,11 +63,11 @@ editButton.addEventListener('click', () => {
     const newPasswordDiv = document.createElement('div');
     newPasswordDiv.classList.add('info-row');
     newPasswordDiv.innerHTML = '<label for="new-password">New Password: </label><input type="password" id="new-password" name="new-password">';
-  
+
     const confirmPasswordDiv = document.createElement('div');
     confirmPasswordDiv.classList.add('info-row');
     confirmPasswordDiv.innerHTML = '<label for="confirm-password">Confirm Password: </label><input type="password" id="confirm-password" name="confirm-password">';
-  
+
     const oldPasswordDiv = passwordInput.parentElement;
     oldPasswordDiv.insertAdjacentElement('afterend', newPasswordDiv);
     newPasswordDiv.insertAdjacentElement('afterend', confirmPasswordDiv);

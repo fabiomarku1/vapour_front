@@ -1,78 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Terms of Use</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="terms.css">
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms of Use</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="terms.css">
-</head>
+    <body>
 
-<body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link font-weight-bold" href="../home/home.html">Vapour</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="categoriesDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categories
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="categoriesDropdown">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Adventure</a>
+                            <a class="dropdown-item" href="#">RPG</a>
+                            <a class="dropdown-item" href="#">Strategy</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../about/about.html">About</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="myAccountDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">My Account
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="myAccountDropdown">
+                            <a class="dropdown-item" href="../profile/profile.html">Profile</a>
+                            <a class="dropdown-item" href="#">My Games</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Logout</a>
+                        </div>
+                    </li>
+                </ul>
+                <script>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
-        <a class="navbar-brand" href="../home/home.html" style="color: white">Vapour</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-    </nav>
+                    const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+                    const dropdownMenus = document.querySelectorAll('.dropdown-menu');
 
-    <div class="container mt-5">
-        <h1 class="mb-4">Terms of Use</h1>
-        <p>Welcome to Vapour, a video game digital distribution service. By accessing or using our services, you agree to be bound by these Terms of Use.</p>
-      
-        <h2>License and Restrictions</h2>
-        <p>Subject to your compliance with these Terms of Use, Vapour grants you a limited, non-exclusive, non-transferable, revocable license to access and use our services for your personal, non-commercial use.</p>
-        <p>You agree not to:</p>
-        <ul>
-          <li>Use our services for any illegal or unauthorized purpose.</li>
-          <li>Modify, adapt, translate, or reverse engineer any part of our services.</li>
-          <li>Sell, rent, lease, or sublicense our services.</li>
-          <li>Use any robot, spider, or other automated means to access our services.</li>
-        </ul>
-      
-        <h2>Intellectual Property</h2>
-        <p>All content and materials available through our services, including but not limited to text, graphics, logos, images, and software, are the property of Vapour or our licensors and are protected by copyright, trademark, and other intellectual property laws.</p>
-        <p>You may not copy, reproduce, distribute, transmit, display, perform, or create derivative works of any content or materials available through our services without our prior written consent.</p>
-      
-        <h2>Privacy</h2>
-        <p>Our Privacy Policy explains how we collect, use, and disclose your personal information when you use our services. By using our services, you consent to our collection, use, and disclosure of your personal information as described in our Privacy Policy.</p>
-      
-        <h2>Disclaimer of Warranties</h2>
-        <p>Our services are provided on an "as is" and "as available" basis. We make no representations or warranties of any kind, express or implied, as to the operation of our services or the information, content, materials, or products included in our services.</p>
-        <p>We do not warrant that our services will be uninterrupted or error-free, and we are not responsible for any delays, delivery failures, or other damages resulting from events beyond our reasonable control.</p>
-      
-        <h2>Limitation of Liability</h2>
-        <p>To the fullest extent permitted by applicable law, Vapour and our affiliates, officers, employees, agents, partners, and licensors will not be liable for any indirect, incidental, punitive, or consequential damages arising out of or in connection with these Terms of Use or your use of our services.</p>
-        <p>In no event will our total liability to you for all damages, losses, and causes of action arising out of or relating to these Terms of Use or your use of our services exceed the amount you have paid to us in the last six months, or $100 if you have not made any payments to us.</p>
-      
-        <h2>Indemnification</h2>
-        <p>You agree to indemnify and hold Vapour and our affiliates, officers, employees, agents, partners, and licensors harmless from any claim or demand, including reasonable attorneys' fees, made by any third party due to or arising out of your breach of these Terms of Use or your violation of any law or the rights of a third party.</p>
+                    dropdownToggles.forEach((dropdownToggle) => {
+                        const dropdownMenu = dropdownToggle.nextElementSibling;
+
+                        dropdownMenu.style.display = 'none';
+
+                        dropdownToggle.addEventListener('mouseover', () => {
+                            dropdownMenu.style.display = 'block';
+                        });
+
+                    });
+
+                    for (let i = 0; i < dropdownMenus.length; i++) {
+                        dropdownMenus[i].addEventListener('mouseleave', function () {
+                            this.style.display = 'none';
+                        });
+                    }
+
+                    for (let i = 0; i < dropdownToggles.length; i++) {
+                        dropdownToggles[i].addEventListener('click', function (event) {
+                            event.preventDefault();
+
+                            for (let j = 0; j < dropdownMenus.length; j++) {
+                                dropdownMenus[j].style.display = 'none';
+                            }
+
+                            const dropdownMenu = this.nextElementSibling;
+                            dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+                        });
+                    }
+
+                </script>
+            </div>
+        </nav>
+
+        <div class="container mt-5">
+            <h1 class="mb-4">Terms of Use</h1>
+            <p>Welcome to Vapour, a video game digital distribution service. By accessing or using our services, you agree
+                to be bound by these Terms of Use.</p>
+
+            <h2>License and Restrictions</h2>
+            <p>Subject to your compliance with these Terms of Use, Vapour grants you a limited, non-exclusive,
+                non-transferable, revocable license to access and use our services for your personal, non-commercial use.
+            </p>
+            <p>You agree not to:</p>
+            <ul>
+                <li>Use our services for any illegal or unauthorized purpose.</li>
+                <li>Modify, adapt, translate, or reverse engineer any part of our services.</li>
+                <li>Sell, rent, lease, or sublicense our services.</li>
+                <li>Use any robot, spider, or other automated means to access our services.</li>
+            </ul>
+
+            <h2>Intellectual Property</h2>
+            <p>All content and materials available through our services, including but not limited to text, graphics, logos,
+                images, and software, are the property of Vapour or our licensors and are protected by copyright, trademark,
+                and other intellectual property laws.</p>
+            <p>You may not copy, reproduce, distribute, transmit, display, perform, or create derivative works of any
+                content or materials available through our services without our prior written consent.</p>
+
+            <h2>Privacy</h2>
+            <p>Our Privacy Policy explains how we collect, use, and disclose your personal information when you use our
+                services. By using our services, you consent to our collection, use, and disclosure of your personal
+                information as described in our Privacy Policy.</p>
+
+            <h2>Disclaimer of Warranties</h2>
+            <p>Our services are provided on an "as is" and "as available" basis. We make no representations or warranties of
+                any kind, express or implied, as to the operation of our services or the information, content, materials, or
+                products included in our services.</p>
+            <p>We do not warrant that our services will be uninterrupted or error-free, and we are not responsible for any
+                delays, delivery failures, or other damages resulting from events beyond our reasonable control.</p>
+
+            <h2>Limitation of Liability</h2>
+            <p>To the fullest extent permitted by applicable law, Vapour and our affiliates, officers, employees, agents,
+                partners, and licensors will not be liable for any indirect, incidental, punitive, or consequential damages
+                arising out of or in connection with these Terms of Use or your use of our services.</p>
+            <p>In no event will our total liability to you for all damages, losses, and causes of action arising out of or
+                relating to these Terms of Use or your use of our services exceed the amount you have paid to us in the last
+                six months, or $100 if you have not made any payments to us.</p>
+
+            <h2>Indemnification</h2>
+            <p>You agree to indemnify and hold Vapour and our affiliates, officers, employees, agents, partners, and
+                licensors harmless from any claim or demand, including reasonable attorneys' fees, made by any third party
+                due to or arising out of your breach of these Terms of Use or your violation of any law or the rights of a
+                third party.</p>
         </div>
-      
-</body>
-<!-- Footer section -->
-<footer class="bg-dark text-white">
-    <div class="container py-3 d-flex align-items-center">
 
-        <ul class="list-inline">
-            <li class="list-inline-item"><a href="../home/home.html">Store</a></li>
-            <li class="list-inline-item"><a href="../about/about.html">About</a></li>
-            <li class="list-inline-item"><a href="https://www.facebook.com/people/Vapour/100090254234077/"
-                    target="_blank">Facebook</a></li>
-            <li class="list-inline-item"><a href="https://www.twitter.com/" target="_blank">Twitter</a></li>
-            <li class="list-inline-item"><a href="https://www.instagram.com/" target="_blank">Instagram</a></li>
-            <li class="list-inline-item"><a href="../privacy/privacy.html" target="_blank">Privacy Policy</a></li>
-            <li class="list-inline-item"><a href="../terms/terms.html" target="_blank">Terms of Use</a></li>
-        </ul>
-    </div>
-    <div class="container-fluid bg-secondary py-2">
-        <div class="text-center">
-            &copy; 2023 Vapour. All Rights Reserved.
+    </body>
+    <footer class="bg-dark text-white">
+        <div class="container py-3 d-flex align-items-center">
+
+            <ul class="list-inline">
+                <li class="list-inline-item"><a href="../home/home.html">Store</a></li>
+                <li class="list-inline-item"><a href="../about/about.html">About</a></li>
+                <li class="list-inline-item"><a href="https://www.facebook.com/people/Vapour/100090254234077/"
+                        target="_blank">Facebook</a></li>
+                <li class="list-inline-item"><a href="https://www.twitter.com/" target="_blank">Twitter</a></li>
+                <li class="list-inline-item"><a href="https://www.instagram.com/" target="_blank">Instagram</a></li>
+                <li class="list-inline-item"><a href="../privacy/privacy.html" target="_blank">Privacy Policy</a></li>
+                <li class="list-inline-item"><a href="../terms/terms.html" target="_blank">Terms of Use</a></li>
+            </ul>
         </div>
-    </div>
-</footer>
-
+        <div class="container-fluid bg-secondary py-2">
+            <div class="text-center">
+                &copy; 2023 Vapour. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
 </html>

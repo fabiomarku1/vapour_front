@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vapour</title>
-    <!-- Bootstrap CSS -->
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
 </head>
@@ -13,95 +13,94 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-              <a class="nav-link font-weight-bold" href="../home/home.html">Vapour</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="categoriesDropdown" role="button" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">Categories
-              </a>
-              <div class="dropdown-menu" aria-labelledby="categoriesDropdown">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Adventure</a>
-                <a class="dropdown-item" href="#">RPG</a>
-                <a class="dropdown-item" href="#">Strategy</a>
-              </div>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="../about/about.html">About</a>
-            </li>
-          </ul>
-          <ul class="navbar-nav">
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="myAccountDropdown" role="button" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">My Account
-              </a>
-              <div class="dropdown-menu" aria-labelledby="myAccountDropdown">
-                <a class="dropdown-item" href="../profile/profile.html">Profile</a>
-                <a class="dropdown-item" href="#">My Games</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Logout</a>
-              </div>
-            </li>
-        </ul>
-          <script>
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link font-weight-bold" href="../home/home.html">Vapour</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="categoriesDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categories
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="categoriesDropdown">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Adventure</a>
+                        <a class="dropdown-item" href="#">RPG</a>
+                        <a class="dropdown-item" href="#">Strategy</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../about/about.html">About</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="myAccountDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">My Account
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="myAccountDropdown">
+                        <a class="dropdown-item" href="../profile/profile.html">Profile</a>
+                        <a class="dropdown-item" href="#">My Games</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Logout</a>
+                    </div>
+                </li>
+                <!-- <li class="nav-item"><a class="nav-link" href="../login/login.html">Login</a></li> -->
+            </ul>
+            <script>
 
-            const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
-            const dropdownMenus = document.querySelectorAll('.dropdown-menu');
+                const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+                const dropdownMenus = document.querySelectorAll('.dropdown-menu');
 
-            dropdownToggles.forEach((dropdownToggle) => {
-              const dropdownMenu = dropdownToggle.nextElementSibling;
-      
-              dropdownMenu.style.display = 'none';
-      
-              dropdownToggle.addEventListener('mouseover', () => {
-                dropdownMenu.style.display = 'block';
-              });
-      
-            });
+                dropdownToggles.forEach((dropdownToggle) => {
+                    const dropdownMenu = dropdownToggle.nextElementSibling;
 
-            for (let i = 0; i < dropdownMenus.length; i++) {
-                dropdownMenus[i].addEventListener('mouseleave', function() {
-                this.style.display = 'none';
+                    dropdownMenu.style.display = 'none';
+
+                    dropdownToggle.addEventListener('mouseover', () => {
+                        dropdownMenu.style.display = 'block';
+                    });
+
                 });
-            }
 
-            for (let i = 0; i < dropdownToggles.length; i++) {
-                dropdownToggles[i].addEventListener('click', function(event) {
-                event.preventDefault();
-
-                for (let j = 0; j < dropdownMenus.length; j++) {
-                    dropdownMenus[j].style.display = 'none';
+                for (let i = 0; i < dropdownMenus.length; i++) {
+                    dropdownMenus[i].addEventListener('mouseleave', function () {
+                        this.style.display = 'none';
+                    });
                 }
 
-                const dropdownMenu = this.nextElementSibling;
-                dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
-                });
-            }
+                for (let i = 0; i < dropdownToggles.length; i++) {
+                    dropdownToggles[i].addEventListener('click', function (event) {
+                        event.preventDefault();
 
-          </script>
+                        for (let j = 0; j < dropdownMenus.length; j++) {
+                            dropdownMenus[j].style.display = 'none';
+                        }
+
+                        const dropdownMenu = this.nextElementSibling;
+                        dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+                    });
+                }
+
+            </script>
         </div>
-      </nav>
-      
-    <!-- Navigation bar -->
+    </nav>
 
-    <!-- Header section -->
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
             <h1 class="display-4" style="color: #3498db; font-family: 'Roboto', sans-serif;">Welcome to Vapour!</h1>
-            <p class="lead" style="font-family: 'Roboto', sans-serif; font-size: 24px; color: #555;">Find your favorite games and discover new ones</p>
+            <p class="lead" style="font-family: 'Roboto', sans-serif; font-size: 24px; color: #555;">Find your favorite
+                games and discover new ones</p>
             <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form>
         </div>
     </div>
-    <!-- Featured section -->
+
     <section class="container">
         <h2>Featured Games</h2>
         <div class="row">
@@ -138,7 +137,7 @@
             <!-- Add more cards here -->
         </div>
     </section>
-    <!-- Popular games section -->
+
     <section class="container">
         <h2>Popular Games</h2>
         <div class="row">
@@ -175,7 +174,7 @@
             <!-- Add more cards here -->
         </div>
     </section>
-    <!-- New releases section -->
+
     <section class="container">
         <h2>New Releases</h2>
         <div class="row">
@@ -212,16 +211,17 @@
             <!-- Add more cards here -->
         </div>
     </section>
-    <!-- Footer section -->
+
     <footer class="bg-dark text-white">
-        <div class="container py-3 d-flex align-items-center" >
+        <div class="container py-3 d-flex align-items-center">
 
             <ul class="list-inline">
                 <li class="list-inline-item"><a href="../home/home.html">Store</a></li>
                 <li class="list-inline-item"><a href="#">My Account</a></li>
                 <!-- <li class="list-inline-item"><a href="#">Login</a></li> -->
                 <li class="list-inline-item"><a href="../about/about.html">About</a></li>
-                <li class="list-inline-item"><a href="https://www.facebook.com/people/Vapour/100090254234077/" target="_blank">Facebook</a></li>
+                <li class="list-inline-item"><a href="https://www.facebook.com/people/Vapour/100090254234077/"
+                        target="_blank">Facebook</a></li>
                 <li class="list-inline-item"><a href="https://www.twitter.com/" target="_blank">Twitter</a></li>
                 <li class="list-inline-item"><a href="https://www.instagram.com/" target="_blank">Instagram</a></li>
                 <li class="list-inline-item"><a href="../privacy/privacy.html" target="_blank">Privacy Policy</a></li>
