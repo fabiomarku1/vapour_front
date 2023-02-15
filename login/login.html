@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" type="text/css" href="login.css">
+    <script defer src="login.js"></script>
   </head>
 
   <body>
@@ -20,8 +21,8 @@
 
       <div class="button-submit">
         <input type="submit" value="Sign In">
-        <span class="error-text">Please check your password and email and try again.</span>
-        <p>Don't have an account? <a href="#" class="register-link">Register</a></p>
+        <span class="error-text" id="sign-Error" hidden>Please check your password and email and try again.</span>
+        <p>Don't have an account? <a href="../register/register.html" class="register-link">Register</a></p>
       </div>
     </form>
   </body>
