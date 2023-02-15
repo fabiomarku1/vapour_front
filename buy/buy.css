@@ -1,4 +1,4 @@
-.profile-container {
+.receipt-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,7 +9,7 @@
     background-size: cover;
 }
 
-.profile-content {
+.receipt-content {
     display: flex;
     align-items: center;
     padding: 20px;
@@ -18,20 +18,17 @@
     background-color: rgba(255, 255, 255, 0.7);
 }
 
-.profile-info {
+.receipt-info {
     display: flex;
     flex-direction: column;
 }
 
-.info-row {
-    margin-bottom: 20px;
+
+.form-group {
+    margin-bottom: 0.5rem; /* adjust as needed */
 }
 
-h1 {
-    margin-bottom: 30px;
-}
-
-.button-group {
+.submit-button {
     display: flex;
     justify-content: center;
     align-self: flex-end;

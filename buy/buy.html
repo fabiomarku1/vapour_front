@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="buy.css">
+</head>
+
+<body>
+    <div class="receipt-container">
+        <div class="receipt-content">
+            <div class="receipt-info">
+                <div class="row justify-content-center align-items-center">
+                    <div class="col-md-4">
+                        <img src="https://via.placeholder.com/350x400" class="img-fluid rounded">
+                    </div>
+                    <div class="col-md-8">
+                        <div>
+                            <div class="row mb-1">
+                                <label for="title" class="col-sm-4 col-form-label">Title:</label>
+                                <div class="col-sm-8">
+                                    <input type="text" id="title" class="form-control short-input" value="" disabled>
+                                </div>
+                            </div>
+                            <div class="row mb-1">
+                                <label for="genre" class="col-sm-4 col-form-label">Genre:</label>
+                                <div class="col-sm-8">
+                                    <input type="text" id="genre" class="form-control short-input" value="" disabled>
+                                </div>
+                            </div>
+                            <div class="row mb-1">
+                                <label for="quantity" class="col-sm-4 col-form-label">Quantity:</label>
+                                <div class="col-sm-4">
+                                    <input type="number" id="quantity" class="form-control short-input" value="1">
+                                </div>
+                            </div>
+                            <div class="form-group row mb-1">
+                                <label for="price" class="col-sm-4 col-form-label">Price:</label>
+                                <div class="col-sm-8">
+                                    <input type="text" id="price" class="form-control short-input" value="$19.99" disabled>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="submit-button">
+                    <button type="submit" class="btn btn-primary edit-button">Confirm</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
