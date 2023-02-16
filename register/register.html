@@ -6,6 +6,7 @@
     <title>Register</title>
     <link rel="stylesheet" type="text/css" href="register.css">
     <link rel="icon" type="image/png" href="../icon.png">
+    <script defer src="register.js"></script>
   </head>
 
   <body>
@@ -13,27 +14,22 @@
     <form>
       <label for="username">Email:</label>
       <input type="text" id="username" name="username">
-      <span class="error-text">Please enter a valid email address.</span>
+      <span class="error-text" hidden id="email-Error">Please enter a valid email address.</span>
       <br>
 
       <label for="password">Password:</label>
       <input type="password" id="password" name="password">
-      <ul class="password-prompt">
-        <li>Use 8 or more characters</li>
-        <li>Include a number</li>
-        <li>Include a symbol (!,%,#,@...)</li>
-      </ul>
-      <span class="error-text">Enter a strong password.</span>
+      <span class="error-text" hidden id="password-Error">Enter a strong password.</span>
       <br>
 
       <label for="confirm-password">Confirm Password:</label>
       <input type="password" id="confirm-password" name="confirm-password">
-      <span class="error-text">Password does not match.</span>
+      <span class="error-text" hidden id="confirm-Error">Password does not match.</span>
       <br>
 
       <div class="button-submit">
         <input type="submit" value="Register">
-        <p>Already have an account? <a href="#" class="login-link">Log In</a></p>
+        <p>Already have an account? <a href="../login/login.html" class="login-link">Log In</a></p>
       </div>
     </form>
   </body>

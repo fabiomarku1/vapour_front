@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="../icon.png">
+    <script defer src="home.js"></script>
 </head>
 
 <body>
@@ -45,12 +46,12 @@
                         <a class="dropdown-item" href="../profile/profile.html">Profile</a>
                         <a class="dropdown-item" href="../mygames/mygames.html">My Games</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Logout</a>
+                        <a class="dropdown-item" href="../login/login.html">Logout</a>
                     </div>
                 </li>
                 <!-- <li class="nav-item"><a class="nav-link" href="../login/login.html">Login</a></li> -->
             </ul>
-            <script>
+             <script>
 
                 const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
                 const dropdownMenus = document.querySelectorAll('.dropdown-menu');
@@ -85,7 +86,7 @@
                     });
                 }
 
-            </script>
+            </script> 
         </div>
     </nav>
 
@@ -101,118 +102,26 @@
         </div>
     </div>
 
-    <section class="container">
+    <section class="container" id="container-featured">
         <h2>Featured Games</h2>
-        <div class="row">
-            <div class="col-sm-4 mb-4">
-                <div class="card">
-                    <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Game Title</h5>
-                        <p class="card-text">Game Tags</p>
-                        <a href="../buy/buy.html" class="btn btn-primary">Buy Now</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4 mb-4">
-                <div class="card">
-                    <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Game Title</h5>
-                        <p class="card-text">Game Tags</p>
-                        <a href="#" class="btn btn-primary">Buy Now</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4 mb-4">
-                <div class="card">
-                    <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Game Title</h5>
-                        <p class="card-text">Game Tags</p>
-                        <a href="#" class="btn btn-primary">Buy Now</a>
-                    </div>
-                </div>
-            </div>
-            <!-- Add more cards here -->
+        <div class="row" id="featured-div">
         </div>
     </section>
 
-    <section class="container">
+    <section class="container" id="container-popular">
         <h2>Popular Games</h2>
-        <div class="row">
-            <div class="col-sm-4 mb-4">
-                <div class="card">
-                    <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Game Title</h5>
-                        <p class="card-text">Game Tags</p>
-                        <a href="#" class="btn btn-primary">Buy Now</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4 mb-4">
-                <div class="card">
-                    <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Game Title</h5>
-                        <p class="card-text">Game Tags</p>
-                        <a href="#" class="btn btn-primary">Buy Now</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4 mb-4">
-                <div class="card">
-                    <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Game Title</h5>
-                        <p class="card-text">Game Tags</p>
-                        <a href="#" class="btn btn-primary">Buy Now</a>
-                    </div>
-                </div>
-            </div>
+        <div class="row" id="popular-div">
         </div>
     </section>
 
-    <section class="container">
+    <section class="container" id="container-newRelease">
         <h2>New Releases</h2>
-        <div class="row">
-            <div class="col-sm-4 mb-4">
-                <div class="card">
-                    <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Game Title</h5>
-                        <p class="card-text">Game Tags</p>
-                        <a href="#" class="btn btn-primary">Buy Now</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4 mb-4">
-                <div class="card">
-                    <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Game Title</h5>
-                        <p class="card-text">Game Tags</p>
-                        <a href="#" class="btn btn-primary">Buy Now</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4 mb-4">
-                <div class="card">
-                    <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Game Title</h5>
-                        <p class="card-text">Game Tags</p>
-                        <a href="#" class="btn btn-primary">Buy Now</a>
-                    </div>
-                </div>
-            </div>
+        <div class="row" id="new-div">
         </div>
     </section>
 
     <footer class="bg-dark text-white">
         <div class="container py-3 d-flex align-items-center">
-
             <ul class="list-inline">
                 <li class="list-inline-item"><a href="../home/home.html">Store</a></li>
                 <li class="list-inline-item"><a href="../profile/profile.html">My Account</a></li>

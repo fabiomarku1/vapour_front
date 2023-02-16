@@ -2,6 +2,17 @@
 const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
 const dropdownMenus = document.querySelectorAll('.dropdown-menu');
 
+
+const editButton = document.querySelector('.edit-button');
+let saveButton = document.querySelector('.save-button');
+
+const nameInput = document.querySelector('#name');
+const surnameInput = document.querySelector('#surname');
+const ageInput = document.querySelector('#age');
+const passwordLabel = document.querySelector('label[for="password"]');
+const passwordInput = document.querySelector('#password');
+const email=document.getElementById("email");
+
 dropdownToggles.forEach((dropdownToggle) => {
     const dropdownMenu = dropdownToggle.nextElementSibling;
 
@@ -33,18 +44,45 @@ for (let i = 0; i < dropdownToggles.length; i++) {
 }
 
 
+const userId=window.localStorage.getItem("userId");
 
-const editButton = document.querySelector('.edit-button');
-const saveButton = document.querySelector('.save-button');
+const url = `http://localhost:80/testPhp/User/${userId}`;
 
-const nameInput = document.querySelector('#name');
-const surnameInput = document.querySelector('#surname');
-const ageInput = document.querySelector('#age');
-const passwordLabel = document.querySelector('label[for="password"]');
-const passwordInput = document.querySelector('#password');
+async function GetUser() {
+    return await fetch(url, {
+        method: 'GET',
+    })
+        .then((e) => e.json())
+        .then((json) => json);
+}
 
+async function UpdateUser() {
+    return await fetch(url, {
+        method: 'PUT',
+        body: JSON.stringify({
+            "Email": `${email.value}`,
+            "Name": `${nameInput.value}`,
+            "Surname": `${surnameInput.value}`,
+            "Age": `${ageInput.value}`
+        }),
+    })
+        .then((e) => e.json())
+        .then((json) => json);
+}
 
-editButton.addEventListener('click', () => {
+window.addEventListener("load", async e => {
+    e.preventDefault();
+  
+    const user = await GetUser();
+
+    nameInput.value=user["Name"];
+    surnameInput.value=user["Surname"];
+    ageInput.value=user["Age"];
+    email.value=`${user["Email"]}`;
+  });
+
+editButton.addEventListener('click', async (e) => {
+    e.preventDefault();
     editButton.setAttribute('hidden', true);
     saveButton.removeAttribute('hidden');
 
@@ -71,4 +109,14 @@ editButton.addEventListener('click', () => {
     const oldPasswordDiv = passwordInput.parentElement;
     oldPasswordDiv.insertAdjacentElement('afterend', newPasswordDiv);
     newPasswordDiv.insertAdjacentElement('afterend', confirmPasswordDiv);
+
+    saveButton.addEventListener("click", async (e)=>{
+        await UpdateUser();
+        window.location.reload();
+    } )
 });
+
+
+
+  
+
