@@ -54,7 +54,6 @@ addEventListener("submit", async (e) => {
 
   const request = await login();
 
-
   if (request["code"] == 400)
     HanldeError("Password is wrong")
 
@@ -70,6 +69,12 @@ addEventListener("submit", async (e) => {
     window.localStorage.setItem("token",_TOKEN);
     window.localStorage.setItem("userId",_UserId);
    
+    if(decodedData["Role"]=="Admin")
+    {
+      window.location.replace("../admin/admin.html");
+    }
+    else
+
      window.location.replace('../home/home.html');
 
   }
