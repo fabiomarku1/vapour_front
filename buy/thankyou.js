@@ -29,4 +29,11 @@ for (let i = 0; i < dropdownToggles.length; i++) {
         const dropdownMenu = this.nextElementSibling;
         dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
     });
+
+    function redirect() {
+        setTimeout(function() {
+          window.location.href = "../home/home.html";
+        }, 2000);
+      }
+      redirect();
 }
