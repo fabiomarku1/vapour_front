@@ -1,5 +1,5 @@
 'use strict'
-const url = "http://localhost/testPhp/Auth/register";
+const url = "http://localhost/vapour_back/Auth/register";
 var email = document.getElementById("username");
 var password = document.getElementById("password");
 var confirmPassword = document.getElementById("confirm-password");

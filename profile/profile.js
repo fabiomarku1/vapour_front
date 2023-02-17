@@ -46,7 +46,7 @@ for (let i = 0; i < dropdownToggles.length; i++) {
 
 const userId=window.localStorage.getItem("userId");
 
-const url = `http://localhost:80/testPhp/User/${userId}`;
+const url = `http://localhost:80/vapour_back/User/${userId}`;
 
 async function GetUser() {
     return await fetch(url, {

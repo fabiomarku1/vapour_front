@@ -1,68 +1,101 @@
+const url = `http://localhost:80/vapour_back/User`;
+const urlProducts = `http://localhost:80/vapour_back/Product`;
+const urlSales = `http://localhost:80/vapour_back/Sales`;
+let tableBody=document.getElementById("table-Body");
+let tableBodyProducts=document.getElementById("table-Body-Products");
+let tableBodySales=document.getElementById("table-Body-Sales");
 
-document.addEventListener("DOMContentLoaded", function () {
-    const addButton = document.querySelector("button.btn-primary");
-    const tbody = document.querySelector("table.games tbody");
+async function GetUser() {
+    return await fetch(url, {
+        method: 'GET',
+    })
+        .then((e) => e.json())
+        .then((json) => json);
+}
 
-    addButton.addEventListener("click", function () {
-        if (addButton.classList.contains("btn-primary")) {
-            addButton.classList.remove("btn-primary");
-            addButton.classList.add("btn-success");
-            addButton.textContent = "Confirm";
 
-            let newRow = document.createElement("tr");
-            newRow.innerHTML = `
-          <td></td>
-          <td><input type="text" class="form-control"></td>
-          <td><input type="text" class="form-control"></td>
-          <td><input type="number" step="0.01" class="form-control"></td>
-          <td><input type="number" class="form-control"></td>
-        `;
-            const gameIds = Array.from(tbody.querySelectorAll("tr")).map(row => Number(row.cells[0].innerHTML));
-            const newGameId = Math.max(...gameIds) + 1;
-        
-            newRow.cells[0].innerHTML = newGameId;
-            tbody.appendChild(newRow);
-        } else {
-            let lastRow = tbody.lastElementChild;
-            let inputs = lastRow.querySelectorAll("input");
-            let game = {
-                title: inputs[0].value,
-                category: inputs[1].value,
-                price: parseFloat(inputs[2].value),
-                quantity: parseInt(inputs[3].value)
-            };
-            if (game.title.trim() === "" || game.category.trim() === "" || isNaN(game.price) || isNaN(game.quantity)) {
-                alert("Please fill in all the fields correctly.");
-            } else {
-                let xhr = new XMLHttpRequest();
-                xhr.open("POST", "/add-game");
-                xhr.setRequestHeader("Content-Type", "application/json");
-                xhr.onload = function () {
-                    if (xhr.status === 200) {
-                        let response = JSON.parse(xhr.responseText);
-                        if (response.success) {
-                            lastRow.innerHTML = `
-                  <td>${response.gameId}</td>
-                  <td>${game.title}</td>
-                  <td>${game.category}</td>
-                  <td>${game.price.toFixed(2)}</td>
-                  <td>${game.quantity}</td>
-                `;
-                            addButton.classList.remove("btn-success");
-                            addButton.classList.add("btn-primary");
-                            addButton.textContent = "Add";
-                            alert("New game has been added.");
-                        } else {
-                            alert("Error adding game.");
-                        }
-                    } else {
-                        alert("Error adding game.");
-                    }
-                };
-                xhr.send(JSON.stringify(game));
-            }
-        }
+
+async function GetProducts() {
+    return await fetch(urlProducts, {
+        method: 'GET',
+    })
+        .then((e) => e.json())
+        .then((json) => json);
+}
+
+
+async function GetSales() {
+    return await fetch(urlSales, {
+        method: 'GET',
+    })
+        .then((e) => e.json())
+        .then((json) => json);
+}
+
+async function Display(data,parent) {
+    console.log(data.length);
+    data.forEach(person => {
+      let tableRow = document.createElement("tr");
+      tableRow.innerHTML = `
+        <td><input type="checkbox" class="user-checkbox" value="1"></td>
+        <td>${person["Id"]}</td>
+        <td>${person["Name"]}</td>
+        <td>${person["Surname"]}</td>
+        <td>${person["Email"]}</td>
+        <td>${person["Age"]}</td>
+        <td>${person["DateCreated"]}</td>
+      `;
+      parent.append(tableRow);
     });
-});
+}
+
+
+async function DisplayProducts(data,parent) {
+    console.log(data.length);
+    data.forEach(prod => {
+      let tableRow = document.createElement("tr");
+      tableRow.innerHTML = `
+      <tr>
+      <td>${prod["Id"]}</td>
+      <td>${prod["Name"]}</td>
+      <td>${prod["CategoryId"]}</td>
+      <td>${prod["Price"]}</td>
+      <td>${prod["Quantity"]}</td>
+  </tr>
+      `;
+      parent.append(tableRow);
+    });
+}
+
+
+async function DisplaySales(data,parent) {
+    console.log(data.length);
+    data.forEach(prod => {
+      let tableRow = document.createElement("tr");
+      tableRow.innerHTML = `
+      <tr>
+      <td>${prod["Id"]}</td>
+      <td>${prod["Amount"]}</td>
+      <td>${prod["ProductName"]}</td>
+      <td>${prod["UserId"]}</td>
+      <td>${prod["DateCreated"]}</td>
+  </tr>
+      `;
+      parent.append(tableRow);
+    });
+}
+
+window.addEventListener("load",async (e)=>{
+    e.preventDefault();
+    const users=await GetUser();
+    const products=await GetProducts();
+    const sales=await GetSales();
+    await Display(users,tableBody);
+    await DisplayProducts(products,tableBodyProducts)
+    await DisplaySales(sales,tableBodySales)
+ console.log(sales);
+  });
+console.log(GetUser());
+
 
 
